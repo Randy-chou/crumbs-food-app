@@ -1,0 +1,107 @@
+nav {
+    border-bottom: 3px solid black;
+}
+html {
+    background-color: rgb(31, 31, 31);
+}
+.crumb-font {
+    font-family: brim-narrow-combined-2,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.custom-recipe-tab{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+#recipebutton {
+    color: rgb(255, 255, 255);
+    background-color: rgb(158, 158, 158);
+    height: 80px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: 2px solid rgb(0, 0, 0);
+    border-bottom: 0px;
+    font-family: 'Tinos', serif;
+    font-weight: 700;
+    box-shadow: 3px 0px 2px rgb(44, 44, 44);
+}
+#submitbutton {
+    border-bottom: 0px;
+    font-family: 'Tinos', serif;
+    font-weight: 700;
+    background-color: rgb(156, 156, 156);
+    color: rgb(255, 255, 255)
+}
+#submitbutton:hover {
+    border: 1px solid black;
+}
+.tagsbutton {
+    border-bottom: 0px;
+    font-family: 'Tinos', serif;
+    font-weight: 700;
+    width: 85px
+}
+.tagsbutton:hover {
+    order: 1px solid black;
+}
+#recipebutton:hover {
+    height: 100px;
+    text-decoration: underline;
+}
+/* Cover book styling */
+#coverbook{
+    background-image: url("../images/cover.png");
+    background-size: 100% 100%;
+    max-width: 400px;
+    height: 550px;
+}
+#search_form{
+    padding: 200px 0;
+    margin-left: 17%;
+    width: 70%;
+}
+/* Custom Modal styling  */
+.modal-card{
+    width: 400px;
+}
+/* Recipe List styling */
+#book-container{
+    width: 100%;
+}
+#bookleft{
+    display: inline-block;
+    flex: 1;
+    background-image: url("../images/bookleft.png");
+    background-size: 100% 100%;
+    min-width: 300px;
+    width: 400px;
+    max-width: 400px;
+    height: 500px;
+}
+#search_form_post{
+    width: 70%;
+    margin-left: 17%;
+    margin-top: 5px;
+}
+#bookright{
+    flex: 1;
+    display: inline-block;
+    background-image: url("../images/bookright.png");
+    background-size: 100% 100%;
+    min-width: 300px;
+    width: 400px;
+    max-width: 400px;
+    height: 500px;
+}
+#feed{
+    flex: 1;
+    display: inline-block;
+    background-image: url("../images/feed.png");
+    background-size: 100% 100%;
+    min-width: 300px;
+    max-width: 300px;
+    height: 500px;
+}
+#title{
+    height: 100px;
+}
