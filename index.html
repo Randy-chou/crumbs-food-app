@@ -33,6 +33,8 @@
               <section class="modal-card-body">
                 <!-- Content ... -->
               </section>
+              <footer class="modal-card-foot">
+                <button class="button is-success" id="clearsaved">Clear Saved</button>
               </footer>
             </div>
         </div>
@@ -42,57 +44,66 @@
     <main class="container mb-6" id="coverbook">
         <form class="field" id="search_form">
             <div class="control">
-                <input class="input mb-2" type="text" placeholder="Search for recipes here">
+                <input class="input mb-2" type="text" placeholder="Search for recipes here" id="searchbar">
                 <div class="field is-grouped is-grouped-centered">
                     <button class="button is-primary mr-3" id="submitbutton">Submit</button>
-                    <button class="button is-secondary" id="tagsbutton">Tags</button>
+                    <button class="button is-secondary tagsbutton">Tags</button>
                 </div>
             </div>
         </form>
-
-        <!--Search tags modal-->
-        <div class="modal is_active" id="search_modal">
-            <div class="modal-background"></div>
-            <div class="modal-card">
-              <header class="modal-card-head">
-                <p class="modal-card-title">Narrow your search results</p>
-                <button class="delete quitbutton" aria-label="close"></button>
-              </header>
-              <section class="modal-card-body">
-                <label class="checkbox p-2">
-                    <input type="checkbox">
-                    dairy free
-                </label>
-                <label class="checkbox p-2">
-                    <input type="checkbox">
-                    vegetarian
-                </label>
-                <label class="checkbox p-2">
-                    <input type="checkbox">
-                    gluten_free
-                </label>
-                <label class="checkbox p-2">
-                    <input type="checkbox">
-                    comfort_food
-                </label>
-                <label class="checkbox p-2">
-                    <input type="checkbox">
-                    vegan
-                </label>
-              </section>
-              </footer>
-            </div>
-        </div>
     </main>
 
     <!--Open book and side notepad-->>
     <main class = "is-flex is-justify-content-space-evenly is-flex-wrap-wrap mb-6" id="book-container">
             <div class= "is-flex is-justify-content-center is-flex-wrap-wrap mb-2">
-                <section id="bookleft"></section>
+                <section id="bookleft">
+                    <form class="field" id="search_form_post">
+                        <div class="field has-addons">
+                            <div class="control">
+                              <input class="input" type="text" placeholder="search recipes">
+                            </div>
+                            <button class="button is-primary mr-3 tagsbutton">Tags</button>
+                        </div>
+                    </form>
+                </section>
                 <section id="bookright"></section>
             </div>
         <section id="feed"></section>
     </main> 
+
+    <!--Search tags modal-->
+    <div class="modal is_active" id="search_modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+          <header class="modal-card-head">
+            <p class="modal-card-title">Narrow your search results</p>
+            <button class="delete quitbutton" aria-label="close"></button>
+          </header>
+          <section class="modal-card-body" id="tagsbox">
+            <label class="checkbox p-2" value="dairy_free">
+                <input type="checkbox">
+                dairy free
+            </label>
+            <label class="checkbox p-2" value="vegetarian">
+                <input type="checkbox"">
+                vegetarian
+            </label>
+            <label class="checkbox p-2" value="gluten_free">
+                <input type="checkbox">
+                gluten free
+            </label>
+            <label class="checkbox p-2" value="comfort_food">
+                <input type="checkbox">
+                comfort food
+            </label>
+            <label class="checkbox p-2" value="vegan">
+                <input type="checkbox">
+                vegan
+            </label>
+          </section>
+          </footer>
+        </div>
+    </div>
 </body>
 
 <!--Jquery-->

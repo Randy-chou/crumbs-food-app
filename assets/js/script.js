@@ -16,6 +16,8 @@ function breakcookie(){
       }
 }
 
+titleimg.on("click", breakcookie);
+
 //Navbar functionality
 var recipebutton = $("#recipebutton");
 
@@ -27,13 +29,25 @@ function showrecipes(event){
 recipebutton.on("click",showrecipes);
 
 //Recipe search bar functionality
-var tagsbutton = $("#tagsbutton");
+var tagsbutton = $(".tagsbutton");
 var searchform = $("#search_form");
 var quitbutton = $(".quitbutton");
 
 function searchrecipes(event){
     event.preventDefault();
-    console.log("search now");
+    var searchbar = $("#searchbar");
+
+    var userInput = $(searchbar).val()
+    var tags = [];
+
+    $("#tagsbox").children().each(function(index){
+        if($(this).children("input")[0].checked){
+            tags.push($(this).attr("value"));
+        }
+    })
+
+    console.log(tags);
+    console.log(tags.join(" "));
 }
 
 function showtags(event){
@@ -49,5 +63,3 @@ function exitmodal(event){
 searchform.on("submit", searchrecipes);
 tagsbutton.on("click", showtags);
 quitbutton.on("click", exitmodal)
-
-titleimg.on("click", breakcookie);

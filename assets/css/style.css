@@ -44,6 +44,12 @@ nav {
     height: 500px;
 }
 
+#search_form_post{
+    width: 70%;
+    margin-left: 17%;
+    margin-top: 5px;
+}
+
 #bookright{
     flex: 1;
     display: inline-block;
