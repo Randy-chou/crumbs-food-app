@@ -78,7 +78,12 @@ function searchrecipes(event){
         $(response.results).each(function(index){
             var elName = this.name;
             var elId = this.id;
-            var newEl = $('<li></li>');
+            var newEl = $('<li>'+ elName +'</li>');
+            if(index < 10){
+                $("#left-list").append(newEl);
+            }else{
+                $("#right-list").append(newEl);
+            }
         })
     });
 }
