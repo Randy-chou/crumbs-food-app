@@ -130,9 +130,16 @@ html {
     height: 445px;
     border: 3px solid blue;
 }
-#left-list {
+#left-list, #right-list {
+    font-size: 20px;
     margin-top: 10px;
     text-align: center;
     font-family: 'Tinos', serif;
     margin-bottom: 10px;
+    text-decoration: underline;
+}
+
+
+li {
+    margin-top: 10px
 }
