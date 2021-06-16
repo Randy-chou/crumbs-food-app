@@ -8,11 +8,24 @@ nav {
     border-bottom-right-radius: 0;
 }
 
+/* Cover book styling */
 #coverbook{
     background-image: url("../images/cover.png");
     background-size: 100% 100%;
     max-width: 400px;
     height: 550px;
+}
+
+#search_form{
+    padding: 200px 0;
+    margin-left: 17%;
+    width: 70%;
+}
+
+/* Custom Modal styling  */
+
+.modal-card{
+    width: 400px;
 }
 
 /* Recipe List styling */
@@ -47,8 +60,8 @@ nav {
     display: inline-block;
     background-image: url("../images/feed.png");
     background-size: 100% 100%;
-    min-width: 200px;
-    max-width: 200px;
+    min-width: 300px;
+    max-width: 300px;
     height: 500px;
 }
 

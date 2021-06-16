@@ -12,18 +12,82 @@
 </head>
 
 <body>
+    <!--Navigation Bar-->
     <nav class="columns is-align-items-flex-end has-background-light">
         <div class="column is-four-fifths">
             <img class="navbar-item" src="./assets/images/title_1.png" id="title">
         </div>
-        <div class="column is-2 ml-6 pb-0" id="recipetab">
-            <button class="button is-primary p-5 custom-recipe-tab"><strong>recipes</strong></button>
+
+        <div class="column is-2 pb-0" id="recipetab">
+            <button class="button is-primary p-5 custom-recipe-tab" id="recipebutton"><strong>saved recipes</strong></button>
+        </div>
+
+        <!--past recipes modal-->
+        <div class="modal" id="history_modal">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+              <header class="modal-card-head">
+                <p class="modal-card-title">saved Recipes</p>
+                <button class="delete quitbutton" aria-label="close"></button>
+              </header>
+              <section class="modal-card-body">
+                <!-- Content ... -->
+              </section>
+              </footer>
+            </div>
         </div>
     </nav>
+
+    <!--Book cover and search form-->
     <main class="container mb-6" id="coverbook">
+        <form class="field" id="search_form">
+            <div class="control">
+                <input class="input mb-2" type="text" placeholder="Search for recipes here">
+                <div class="field is-grouped is-grouped-centered">
+                    <button class="button is-primary mr-3" id="submitbutton">Submit</button>
+                    <button class="button is-secondary" id="tagsbutton">Tags</button>
+                </div>
+            </div>
+        </form>
+
+        <!--Search tags modal-->
+        <div class="modal is_active" id="search_modal">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+              <header class="modal-card-head">
+                <p class="modal-card-title">Narrow your search results</p>
+                <button class="delete quitbutton" aria-label="close"></button>
+              </header>
+              <section class="modal-card-body">
+                <label class="checkbox p-2">
+                    <input type="checkbox">
+                    dairy free
+                </label>
+                <label class="checkbox p-2">
+                    <input type="checkbox">
+                    vegetarian
+                </label>
+                <label class="checkbox p-2">
+                    <input type="checkbox">
+                    gluten_free
+                </label>
+                <label class="checkbox p-2">
+                    <input type="checkbox">
+                    comfort_food
+                </label>
+                <label class="checkbox p-2">
+                    <input type="checkbox">
+                    vegan
+                </label>
+              </section>
+              </footer>
+            </div>
+        </div>
     </main>
-    <main class = "is-flex is-justify-content-space-evenly is-flex-wrap-wrap" id="book-container">
-            <div class= "is-flex is-justify-content-center is-flex-wrap-wrap mb-6">
+
+    <!--Open book and side notepad-->>
+    <main class = "is-flex is-justify-content-space-evenly is-flex-wrap-wrap mb-6" id="book-container">
+            <div class= "is-flex is-justify-content-center is-flex-wrap-wrap mb-2">
                 <section id="bookleft"></section>
                 <section id="bookright"></section>
             </div>
