@@ -75,15 +75,19 @@ function searchrecipes(event){
     };
     $.ajax(settings).done(function (response) {
         //For each returned recipe object make a list item
+        $("#left-list").html("");
+        $("#right-list").html("");
         $(response.results).each(function(index){
             var elName = this.name;
             var elId = this.id;
             var newEl = $('<li>'+ elName +'</li>');
+            newEl.attr("value", elId);
             if(index < 10){
                 $("#left-list").append(newEl);
             }else{
                 $("#right-list").append(newEl);
             }
+            console.log(newEl.val())
         })
     });
 }
