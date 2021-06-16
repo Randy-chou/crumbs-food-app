@@ -32,7 +32,17 @@ html {
     background-color: rgb(156, 156, 156);
     color: rgb(255, 255, 255)
 }
+#gobutton {
+    border-bottom: 0px;
+    font-family: 'Tinos', serif;
+    font-weight: 700;
+    background-color: rgb(156, 156, 156);
+    color: rgb(255, 255, 255)
+}
 #submitbutton:hover {
+    border: 1px solid black;
+} 
+#gobutton:hover {
     border: 1px solid black;
 }
 .tagsbutton {
@@ -104,4 +114,25 @@ html {
 }
 #title{
     height: 100px;
+}
+
+#right-container {
+    width: 400px;
+    height: 500px;
+    border: 3px solid rgb(255, 0, 0);
+}
+
+#left-container {
+    margin-top: 5px;
+    margin-right: 0px;
+    margin-left: 0px;
+    width: 400px;
+    height: 445px;
+    border: 3px solid blue;
+}
+#left-list {
+    margin-top: 10px;
+    text-align: center;
+    font-family: 'Tinos', serif;
+    margin-bottom: 10px;
 }
