@@ -31,14 +31,28 @@ recipebutton.on("click",showrecipes);
 //Recipe search bar functionality
 var tagsbutton = $(".tagsbutton");
 var searchform = $("#search_form");
+var searchformpost = $("#search_form_post");
 var quitbutton = $(".quitbutton");
 
 function searchrecipes(event){
     event.preventDefault();
+    event.stopPropagation();
     var searchbar = $("#searchbar");
-
-    var userInput = $(searchbar).val()
+    var searchbar_post = $("#searchbar_post");
     var tags = [];
+    var userInput = "";
+
+    if($(searchbar).val()){
+        userInput = $(searchbar).val();
+        $(searchbar).val("");
+    }else if($(searchbar_post).val()){
+        userInput = $(searchbar_post).val();
+        $(searchbar_post).val("");
+    }else{
+        return;
+    }
+
+    console.log(userInput)
 
     $("#tagsbox").children().each(function(index){
         if($(this).children("input")[0].checked){
@@ -50,8 +64,10 @@ function searchrecipes(event){
     console.log(tags.join(" "));
 }
 
+
 function showtags(event){
     event.preventDefault();
+    event.stopPropagation();
     $("#search_modal").addClass("is-active");
 }
 
@@ -61,5 +77,6 @@ function exitmodal(event){
 }
 
 searchform.on("submit", searchrecipes);
+searchformpost.on("submit", searchrecipes);
 tagsbutton.on("click", showtags);
 quitbutton.on("click", exitmodal)
