@@ -47,7 +47,7 @@
                 <input class="input mb-2" type="text" placeholder="Search for recipes here" id="searchbar">
                 <div class="field is-grouped is-grouped-centered">
                     <button class="button is-primary mr-3" id="submitbutton">Submit</button>
-                    <button class="button is-secondary" id="tagsbutton">Tags</button>
+                    <button class="button is-secondary tagsbutton">Tags</button>
                 </div>
             </div>
         </form>
@@ -90,7 +90,16 @@
     <!--Open book and side notepad-->>
     <main class = "is-flex is-justify-content-space-evenly is-flex-wrap-wrap mb-6" id="book-container">
             <div class= "is-flex is-justify-content-center is-flex-wrap-wrap mb-2">
-                <section id="bookleft"></section>
+                <section id="bookleft">
+                    <form class="field" id="search_form_post">
+                        <div class="field has-addons">
+                            <div class="control">
+                              <input class="input" type="text" placeholder="search recipes">
+                            </div>
+                            <button class="button is-primary mr-3 tagsbutton">Tags</button>
+                        </div>
+                    </form>
+                </section>
                 <section id="bookright"></section>
             </div>
         <section id="feed"></section>
