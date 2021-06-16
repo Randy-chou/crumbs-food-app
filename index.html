@@ -33,6 +33,8 @@
               <section class="modal-card-body">
                 <!-- Content ... -->
               </section>
+              <footer class="modal-card-foot">
+                <button class="button is-success" id="clearsaved">Clear Saved</button>
               </footer>
             </div>
         </div>
@@ -42,7 +44,7 @@
     <main class="container mb-6" id="coverbook">
         <form class="field" id="search_form">
             <div class="control">
-                <input class="input mb-2" type="text" placeholder="Search for recipes here">
+                <input class="input mb-2" type="text" placeholder="Search for recipes here" id="searchbar">
                 <div class="field is-grouped is-grouped-centered">
                     <button class="button is-primary mr-3" id="submitbutton">Submit</button>
                     <button class="button is-secondary" id="tagsbutton">Tags</button>
@@ -58,24 +60,24 @@
                 <p class="modal-card-title">Narrow your search results</p>
                 <button class="delete quitbutton" aria-label="close"></button>
               </header>
-              <section class="modal-card-body">
-                <label class="checkbox p-2">
+              <section class="modal-card-body" id="tagsbox">
+                <label class="checkbox p-2" value="dairy_free">
                     <input type="checkbox">
                     dairy free
                 </label>
-                <label class="checkbox p-2">
-                    <input type="checkbox">
+                <label class="checkbox p-2" value="vegetarian">
+                    <input type="checkbox"">
                     vegetarian
                 </label>
-                <label class="checkbox p-2">
+                <label class="checkbox p-2" value="gluten_free">
                     <input type="checkbox">
-                    gluten_free
+                    gluten free
                 </label>
-                <label class="checkbox p-2">
+                <label class="checkbox p-2" value="comfort_food">
                     <input type="checkbox">
-                    comfort_food
+                    comfort food
                 </label>
-                <label class="checkbox p-2">
+                <label class="checkbox p-2" value="vegan">
                     <input type="checkbox">
                     vegan
                 </label>
