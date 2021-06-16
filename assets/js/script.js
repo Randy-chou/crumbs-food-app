@@ -42,6 +42,7 @@ function searchrecipes(event){
     var tags = [];
     var userInput = "";
 
+    //Grab search bar value depending on what searchbar is used
     if($(searchbar).val()){
         userInput = $(searchbar).val();
         $(searchbar).val("");
@@ -51,17 +52,36 @@ function searchrecipes(event){
     }else{
         return;
     }
-
     console.log(userInput)
 
+    //Grab checked tags
     $("#tagsbox").children().each(function(index){
         if($(this).children("input")[0].checked){
             tags.push($(this).attr("value"));
         }
     })
 
-    console.log(tags);
-    console.log(tags.join(" "));
+    newUrl = "https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=" + tags.join(" ")  +"&q=" + userInput;
+
+    const settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": newUrl,
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-key": "b86865e28bmsha53eeb88dffe2d3p19b1fajsnd5a35513a90e",
+            "x-rapidapi-host": "tasty.p.rapidapi.com"
+        }
+    };
+    
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+        console.log(response.results);
+        $(response.results).each(function(index){
+            console.log(this.name);
+            console.log(this.id)
+        })
+    });
 }
 
 
