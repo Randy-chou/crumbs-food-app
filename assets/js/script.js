@@ -52,7 +52,6 @@ function searchrecipes(event){
     }else{
         return;
     }
-    console.log(userInput)
 
     //Grab checked tags
     $("#tagsbox").children().each(function(index){
@@ -142,10 +141,22 @@ function getMoreInfo(event){
         console.log(response);
         $("#recipe-name").html(response.name);
         $("#instructions").html("");
-        $(response.instructions).each(function(index){
+        $(response.instructions).each(function(){
             var newEl = $('<li>' + this.display_text + '</li>')
             $("#instructions").append(newEl);
         });
+        $(response.sections).each(function(){
+            if (this.name != null) {
+                var newEl = $('<li>' + this.name+ '</li>');
+                newEl.addClass("mainItem");
+                $("#ingredients-list").append(newEl);
+            }
+            $(this.components).each(function(){
+                var newIng = $('<li>' + this.ingredient.display_singular + '</li>');
+                newIng.addClass("ingredient");
+                $("#ingredients-list").append(newIng);
+            })
+        })
     });
 }
 
