@@ -189,9 +189,19 @@ li:active {
     height: 30px;
     overflow: hidden;
 }
+#ingredients-title{
+    font-weight: 700;
+    margin-top: 6%;
+    margin-left: 10%;
+    height: 30px;
+    overflow: hidden;
+}
 #right-container-post{
-    width: 100%;
-    height: 500px;
+    padding-left: 6%;
+    margin-left: 4%;
+    margin-top: 2%;
+    width: 90%;
+    height: 380px;
     overflow: auto;
 }
 #left-container-post{
