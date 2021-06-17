@@ -60,7 +60,7 @@
     </main>
 
     <!--Open book and side notepad-->>
-    <main class = "is-flex is-justify-content-space-evenly is-flex-wrap-wrap mb-6" id="book-container">
+    <main class = "is-flex is-justify-content-space-evenly is-flex-wrap-wrap" id="book-container">
             <div class= "is-flex is-justify-content-center is-flex-wrap-wrap mb-2">
                 <section id="bookleft">
                     <form class="field" id="search_form_post">
@@ -73,19 +73,47 @@
                         </div>
                     </form>
                     <div id="left-container">
-                        <ul id="left-list">
+                        <ul class="recipe-list" id="left-list">
                         </ul>
                     </div>
                 </section>
                 <section id="bookright">
                     <div id="right-container">
-                        <ul id="right-list">
+                        <ul class="recipe-list" id="right-list">
                         </ul>
                     </div>
                 </section>
             </div>
         <section id="feed"></section>
     </main> 
+
+    <!--Ingredient book and side notepad-->>
+    <main class="is-flex is-justify-content-space-evenly is-flex-wrap-wrap mb-6" id="ingredient-container">
+        <div class="is-flex is-justify-content-center is-flex-wrap-wrap mb-2">
+            <section id="bookleft_post">
+                <div class="is-grouped" id="recipe-top">
+                    <button class="button is-primary mr-2" id="backrecipe">Back</button>
+                    <button class="button is-secondary">Save</button>
+                </div>
+                <h2 id="recipe-name"></h2>
+                <div id="left-container-post">
+                    <ol id="instructions">
+
+                    </ol>
+                </div>
+            </section>
+            <section id="bookright_post">
+                <h2 id="ingredients-title">Ingredients</h2>
+                <div id="right-container-post">
+                    <ol id="ingredients-list">
+
+                    </ol>
+                </div>
+            </section>
+        </div>
+        <section id="feed_post"></section>
+    </main>
+
 
     <!--Search tags modal-->
     <div class="modal is_active" id="search_modal">
