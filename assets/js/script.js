@@ -140,7 +140,12 @@ function getMoreInfo(event){
     $.ajax(settings).done(function (response) {
         console.log(response);
         $("#recipe-name").html(response.name);
+
+        // Clear previously entered information
         $("#instructions").html("");
+        $("#ingredients-list").html("");
+
+        // Loop through response and add instructions and ingredients
         $(response.instructions).each(function(){
             var newEl = $('<li>' + this.display_text + '</li>')
             $("#instructions").append(newEl);
@@ -167,3 +172,4 @@ tagsbutton.on("click", showtags);
 quitbutton.on("click", exitmodal)
 $("#left-list").on("click", getMoreInfo)
 $("#right-list").on("click", getMoreInfo)
+$("#ingredients-list").on("click", getNutrition)
