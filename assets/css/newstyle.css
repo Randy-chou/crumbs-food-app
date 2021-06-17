@@ -187,6 +187,7 @@ li:active {
 #nutrition-container {
     height: 455px;
     margin-top: 45px;
+    padding-left: 5%;
 }
 #tweet-container {
     height: 455px;
@@ -244,4 +245,14 @@ li:active {
 
 .ingredient{
     list-style-type: square;
+}
+
+/* Nutrition List Item Stylings */
+#nutrition-title{
+    font-size: 21px;
+    margin-bottom: 3%;
+}
+
+#nutrition-list{
+    list-style-position: inside;
 }
