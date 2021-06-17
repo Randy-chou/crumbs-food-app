@@ -211,7 +211,7 @@ li:active {
     margin-left: 4%;
     margin-top: 2%;
     width: 90%;
-    height: 380px;
+    height: 410px;
     overflow: auto;
 }
 #left-container-post{
@@ -234,3 +234,14 @@ li:active {
 #backrecipe:hover {
     border: 1px solid black;
 } 
+
+
+
+/* Ingredient List Item Stylings */
+.mainItem{
+    font-weight: 700;
+}
+
+.ingredient{
+    list-style-type: square;
+}
