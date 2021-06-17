@@ -128,12 +128,14 @@ html {
     height: 445px;
 }
 #left-list, #right-list {
-    font-size: 20px;
+    font-size: 15px;
     margin-top: 10px;
-    text-align: center;
-    font-family: 'Tinos', serif;
+    margin-left: 15px;
+    text-align: left;
+    font-family: 'EB Garamond', serif;
     margin-bottom: 10px;
     text-decoration: underline;
+    color: black;
 }
 #book-container li {
     margin-top: 10px;
@@ -182,6 +184,14 @@ li:active {
     max-width: 300px;
     height: 500px;
 }
+#nutrition-container {
+    height: 455px;
+    margin-top: 45px;
+}
+#tweet-container {
+    height: 455px;
+    margin-top: 45px;
+}
 #recipe-name{
     font-weight: 700;
     margin-top: 6%;
@@ -212,6 +222,21 @@ li:active {
     height: 380px;
     overflow: auto;
 }
+
+#backrecipe {
+    border-bottom: 0px;
+    font-family: 'Tinos', serif;
+    font-weight: 700;
+    background-color: rgb(150, 150, 150);
+    color: rgb(255, 255, 255)
+}
+
+#backrecipe:hover {
+    border: 1px solid black;
+} 
+
+
+
 /* Ingredient List Item Stylings */
 .mainItem{
     font-weight: 700;

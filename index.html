@@ -12,6 +12,8 @@
     <!--Google Fonts-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Tinos:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&family=Walter+Turncoat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
     <!--Custom Styles-->
     <link rel="stylesheet" href="./assets/css/newstyle.css">
     <link rel="shortcut icon" type="image/jpg" href="./assets/images/crumbFavicon.png"/>
@@ -84,7 +86,11 @@
                     </div>
                 </section>
             </div>
-        <section id="feed"></section>
+        <section id="feed">
+            <div id="tweet-container">
+                <ul id="tweet-list"></ul>
+            </div>
+        </section>
     </main> 
 
     <!--Ingredient book and side notepad-->>
@@ -93,7 +99,7 @@
             <section id="bookleft_post">
                 <div class="is-grouped" id="recipe-top">
                     <button class="button is-primary mr-2" id="backrecipe">Back</button>
-                    <button class="button is-secondary">Save</button>
+                    <button class="button is-secondary" id="saverecipe">Save</button>
                 </div>
                 <h2 id="recipe-name"></h2>
                 <div id="left-container-post">
@@ -111,7 +117,11 @@
                 </div>
             </section>
         </div>
-        <section id="feed_post"></section>
+        <section id="feed_post">
+            <div id="nutrition-container">
+                <ol id="nutrition-list"></ol>
+            </div>
+        </section>
     </main>
 
 
@@ -129,7 +139,7 @@
                 Dairy Free
             </label>
             <label class="checkbox p-2" value="vegetarian">
-                <input type="checkbox"">
+                <input type="checkbox">
                 Vegetarian
             </label>
             <label class="checkbox p-2" value="gluten_free">

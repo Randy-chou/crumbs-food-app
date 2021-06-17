@@ -28,7 +28,7 @@ function showrecipes(event){
 
 recipebutton.on("click",showrecipes);
 
-//Recipe search bar functionality
+//Recipe search bar functionality 
 var tagsbutton = $(".tagsbutton");
 var searchform = $("#search_form");
 var searchformpost = $("#search_form_post");
