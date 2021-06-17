@@ -62,7 +62,7 @@ function searchrecipes(event){
     })
 
     //API call
-    newUrl = "https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=" + tags.join(" ")  +"&q=" + userInput;
+    newUrl = "https://tasty.p.rapidapi.com/recipes/list?from=0&size=30&tags=" + tags.join(" ")  +"&q=" + userInput;
     const settings = {
         "async": true,
         "crossDomain": true,
@@ -77,21 +77,28 @@ function searchrecipes(event){
         //For each returned recipe object make a list item
         $("#left-list").html("");
         $("#right-list").html("");
+
+        //Keep track of how many li elements have been added
+        var count = 0;
+
         $(response.results).each(function(index){
             var elName = this.name;
             var elId = this.id;
-            var newEl = $('<li>'+ elName +'</li>');
-            newEl.attr("value", elId);
-            if(index < 10){
-                $("#left-list").append(newEl);
-            }else{
-                $("#right-list").append(newEl);
+
+            //Check if this object is actually a recipe and not an article
+            if (this.hasOwnProperty("num_servings")) {
+                var newEl = $('<li>' + elName + '</li>');
+                newEl.attr("value", elId);
+                if (count < 10) {
+                    $("#left-list").append(newEl);
+                } else if(count < 20){
+                    $("#right-list").append(newEl);
+                }
+                count++;
             }
-            console.log(newEl.val())
         })
     });
 }
-
 
 function showtags(event){
     event.preventDefault();
@@ -104,7 +111,48 @@ function exitmodal(event){
     $(event.target).parent().parent().parent().removeClass("is-active");
 }
 
+//Instructions and Ingredients
+
+//Event delegation to make listed recipes clickable
+function getMoreInfo(event){
+    event.preventDefault;
+    var targetEl = event.target;
+
+    //Check if target element is a list item
+    if(!($(targetEl).is("li"))){
+        return;
+    }
+
+    //If element is a list item, place its id value into the API url
+    newUrl="https://tasty.p.rapidapi.com/recipes/detail?id="+$(targetEl).val();
+
+    //API call
+    const settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": newUrl,
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-key": "b86865e28bmsha53eeb88dffe2d3p19b1fajsnd5a35513a90e",
+            "x-rapidapi-host": "tasty.p.rapidapi.com"
+        }
+    };
+    
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+        $("#recipe-name").html(response.name);
+        $("#instructions").html("");
+        $(response.instructions).each(function(index){
+            var newEl = $('<li>' + this.display_text + '</li>')
+            $("#instructions").append(newEl);
+        });
+    });
+}
+
+
 searchform.on("submit", searchrecipes);
 searchformpost.on("submit", searchrecipes);
 tagsbutton.on("click", showtags);
 quitbutton.on("click", exitmodal)
+$("#left-list").on("click", getMoreInfo)
+$("#right-list").on("click", getMoreInfo)
