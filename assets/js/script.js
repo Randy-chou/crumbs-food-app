@@ -203,6 +203,11 @@ function displayMyRecipes(){
     });
 };
 
+function clearRecipes(){
+    myRecipes.innerHTML = '';
+    localStorage.clear();
+}
+
 //Get nutritional info for clicked ingredient
 function getNutrition(event){
     var targetEl = event.target;
@@ -238,6 +243,10 @@ function getNutrition(event){
     });
 }
 
+
+
+
+$("#clearsaved").on('click', clearRecipes)
 $("#myRecipeList").on('click', displayMyRecipes)
 $("#saverecipe").on('click', setRecipe)
 searchform.on("submit", searchrecipes);
