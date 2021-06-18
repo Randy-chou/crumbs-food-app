@@ -29,7 +29,7 @@ function showrecipes(event){
 
 recipebutton.on("click", showrecipes);
 
-//Recipe search bar functionality 
+//Recipe search bar functionality
 var tagsbutton = $(".tagsbutton");
 var searchform = $("#search_form");
 var searchformpost = $("#search_form_post");
@@ -89,6 +89,7 @@ function searchrecipes(event){
             if (this.hasOwnProperty("num_servings")) {
                 var newEl = $('<li>' + elName + '</li>');
                 newEl.attr("value", elId);
+                //According to how many li elements have been added, determine which book side to add the newly created li element.
                 if (count < 10) {
                     $("#left-list").append(newEl);
                 } else if(count < 20){
@@ -111,9 +112,7 @@ function exitmodal(event){
     $(event.target).parent().parent().parent().removeClass("is-active");
 }
 
-//Instructions and Ingredients
-
-//Event delegation to make listed recipes clickable
+//Get Instructions and Ingredients for clicked recipe
 function getMoreInfo(event){
     event.preventDefault;
     var targetEl = event.target;
@@ -142,7 +141,13 @@ function getMoreInfo(event){
     $.ajax(settings).done(function (response) {
         console.log(response);
         $("#recipe-name").html(response.name);
+
+        // Clear previously entered information
         $("#instructions").html("");
+        $("#ingredients-list").html("");
+
+        // Loop through response and add instructions and ingredients
+
         $(response.instructions).each(function(){
             var newEl = $('<li>' + this.display_text + '</li>')
             $("#instructions").append(newEl);
@@ -198,6 +203,40 @@ function displayMyRecipes(){
     });
 };
 
+//Get nutritional info for clicked ingredient
+function getNutrition(event){
+    var targetEl = event.target;
+
+    if(!$(targetEl).hasClass("ingredient")){
+        return;
+    }
+
+    var newUrl = "https://edamam-food-and-grocery-database.p.rapidapi.com/parser?ingr=" + $(targetEl).html();
+
+    const settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": newUrl,
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-key": "b86865e28bmsha53eeb88dffe2d3p19b1fajsnd5a35513a90e",
+            "x-rapidapi-host": "edamam-food-and-grocery-database.p.rapidapi.com"
+        }
+    };
+    
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+        if(response.hints.length > 0){
+            var item = response.hints[0].food;
+            $("#nutrition-title").html(item.label);
+            $("#cbd").html(item.nutrients.CHOCDF.toFixed(4));
+            $("#nrg").html(item.nutrients.ENERC_KCAL.toFixed(4));
+            $("#fat").html(item.nutrients.FAT.toFixed(4));
+            $("#fbr").html(item.nutrients.FIBTG.toFixed(4));
+            $("#prt").html(item.nutrients.PROCNT.toFixed(4));
+        }
+    });
+}
 
 $("#myRecipeList").on('click', displayMyRecipes)
 $("#saverecipe").on('click', setRecipe)
@@ -207,3 +246,4 @@ tagsbutton.on("click", showtags);
 quitbutton.on("click", exitmodal)
 $("#left-list").on("click", getMoreInfo)
 $("#right-list").on("click", getMoreInfo)
+$("#ingredients-list").on("click", getNutrition)

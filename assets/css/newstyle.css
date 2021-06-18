@@ -187,6 +187,7 @@ li:active {
 #nutrition-container {
     height: 455px;
     margin-top: 45px;
+    padding-left: 5%;
 }
 #tweet-container {
     height: 455px;
@@ -234,6 +235,7 @@ li:active {
 #backrecipe:hover {
     border: 1px solid black;
 } 
+
 /* Ingredient List Item Stylings */
 .mainItem{
     font-weight: 700;
@@ -243,3 +245,12 @@ li:active {
     list-style-type: square;
 }
 
+/* Nutrition List Item Stylings */
+#nutrition-title{
+    font-size: 21px;
+    margin-bottom: 3%;
+}
+
+#nutrition-list{
+    list-style-position: inside;
+}
