@@ -48,6 +48,12 @@ You and your group will use everything you’ve learned over the past six units 
 
 ## Site Location
 
+### Deployed: 
+https://randy-chou.github.io/crumbs-food-app/
+
+### GitHub repo: 
+https://github.com/Randy-chou/crumbs-food-app
+
 ## Contributions
 
 Randy Chou (Randy-chou)  Drake Gooding (Drake-G) Alex Philibert (acp25)
