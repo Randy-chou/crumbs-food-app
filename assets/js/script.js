@@ -24,9 +24,10 @@ var recipebutton = $("#recipebutton");
 function showrecipes(event){
     event.preventDefault();
     $("#history_modal").addClass("is-active");
+    displayMyRecipes();
 }
 
-recipebutton.on("click",showrecipes);
+recipebutton.on("click", showrecipes);
 
 //Recipe search bar functionality
 var tagsbutton = $(".tagsbutton");
@@ -115,7 +116,8 @@ function exitmodal(event){
 function getMoreInfo(event){
     event.preventDefault;
     var targetEl = event.target;
-
+    currentRecipe.name = $(targetEl).html();
+    currentRecipe.id = $(targetEl).val();
     //Check if target element is a list item
     if(!($(targetEl).is("li"))){
         return;
@@ -145,6 +147,7 @@ function getMoreInfo(event){
         $("#ingredients-list").html("");
 
         // Loop through response and add instructions and ingredients
+
         $(response.instructions).each(function(){
             var newEl = $('<li>' + this.display_text + '</li>')
             $("#instructions").append(newEl);
@@ -163,6 +166,42 @@ function getMoreInfo(event){
         })
     });
 }
+//My recipes 
+var myRecipes = document.getElementById("myRecipeList");
+
+currentRecipe = {
+    name: "",
+    id: ""
+};
+
+var storedName = localStorage.getItem('recipeArray');
+if (storedName != null) {
+    var recipeArray = JSON.parse(storedName);
+} else {
+    var recipeArray = [];
+};;
+
+function setRecipe() {
+    recipeObject = {name: currentRecipe.name , id: currentRecipe.id};
+    recipeArray.push(recipeObject);
+    console.log(recipeArray);
+    localStorage.setItem('recipeArray', JSON.stringify(recipeArray));
+
+
+};
+
+function displayMyRecipes(){
+    console.log(recipeArray);
+    myRecipes.innerHTML = '';
+
+    $(recipeArray).each(function(){
+        var newRecipe = $('<li>' + this.name + '</li>');
+        newRecipe.attr("value", this.id);
+        $(myRecipes).append(newRecipe);
+
+       
+    });
+};
 
 //Get nutritional info for clicked ingredient
 function getNutrition(event){
@@ -199,6 +238,8 @@ function getNutrition(event){
     });
 }
 
+$("#myRecipeList").on('click', displayMyRecipes)
+$("#saverecipe").on('click', setRecipe)
 searchform.on("submit", searchrecipes);
 searchformpost.on("submit", searchrecipes);
 tagsbutton.on("click", showtags);
