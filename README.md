@@ -67,6 +67,10 @@ Randy Chou (Randy-chou)  Drake Gooding (Drake-G) Alex Philibert (acp25)
 ![image](https://user-images.githubusercontent.com/60405505/122594444-01faf480-d035-11eb-9661-ce28a3ab5fff.png)
 
 
+## Recording of Site
+https://www.loom.com/share/4f2dc959d1c648d3aa7d5ab13a2c7f32
+
+
 
 
 
