@@ -12,6 +12,13 @@ This site was designed to look up recipes and saving the recipes as well.
 - JQuery
 - Two Server-Side APIs
 
+## Functionality
+
+- Use search bars to look up recipes
+- Click on recipe names to bring up instructions and ingredients list
+- On instructions page the save buttons lets you save your recipe names locally to the myRecipes tab in the Nav Bar
+- Clicking on ingredients in the ingredients list will display nutritional information on the right of the page(Note: functionality is not shown on the recording but works on the website)
+
 ## Project Requirements 
 
 You and your group will use everything you’ve learned over the past six units to create a real-world front-end application that you’ll be able to showcase to potential employers. The user story and acceptance criteria will depend on the project that you create, but your project must fulfil the following requirements:

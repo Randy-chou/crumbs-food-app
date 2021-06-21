@@ -1,13 +1,63 @@
-/* Navbar Sytles */
 nav {
     border-bottom: 3px solid black;
 }
-
+html {
+    background-color: rgb(31, 31, 31);
+}
+.crumb-font {
+    font-family: brim-narrow-combined-2,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
 .custom-recipe-tab{
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
-
+#recipebutton {
+    color: rgb(255, 255, 255);
+    background-color: rgb(158, 158, 158);
+    height: 80px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: 2px solid rgb(0, 0, 0);
+    border-bottom: 0px;
+    font-family: 'Tinos', serif;
+    font-weight: 700;
+    box-shadow: 3px 0px 2px rgb(44, 44, 44);
+}
+#submitbutton {
+    border-bottom: 0px;
+    font-family: 'Tinos', serif;
+    font-weight: 700;
+    background-color: rgb(156, 156, 156);
+    color: rgb(255, 255, 255)
+}
+#gobutton {
+    border-bottom: 0px;
+    font-family: 'Tinos', serif;
+    font-weight: 700;
+    background-color: rgb(156, 156, 156);
+    color: rgb(255, 255, 255)
+}
+#submitbutton:hover {
+    border: 1px solid black;
+} 
+#gobutton:hover {
+    border: 1px solid black;
+}
+.tagsbutton {
+    border-bottom: 0px;
+    font-family: 'Tinos', serif;
+    font-weight: 700;
+    width: 85px
+}
+.tagsbutton:hover {
+    order: 1px solid black;
+}
+#recipebutton:hover {
+    height: 100px;
+    text-decoration: underline;
+}
 /* Cover book styling */
 #coverbook{
     background-image: url("../images/cover.png");
@@ -15,24 +65,19 @@ nav {
     max-width: 400px;
     height: 550px;
 }
-
 #search_form{
     padding: 200px 0;
     margin-left: 17%;
     width: 70%;
 }
-
 /* Custom Modal styling  */
-
 .modal-card{
     width: 400px;
 }
-
 /* Recipe List styling */
 #book-container{
     width: 100%;
 }
-
 #bookleft{
     display: inline-block;
     flex: 1;
@@ -43,13 +88,11 @@ nav {
     max-width: 400px;
     height: 500px;
 }
-
 #search_form_post{
     width: 70%;
     margin-left: 17%;
     margin-top: 5px;
 }
-
 #bookright{
     flex: 1;
     display: inline-block;
@@ -60,7 +103,6 @@ nav {
     max-width: 400px;
     height: 500px;
 }
-
 #feed{
     flex: 1;
     display: inline-block;
@@ -70,7 +112,145 @@ nav {
     max-width: 300px;
     height: 500px;
 }
-
 #title{
     height: 100px;
+}
+#right-container {
+    width: 400px;
+    height: 500px;
+}
+
+#left-container {
+    margin-top: 5px;
+    margin-right: 0px;
+    margin-left: 0px;
+    width: 400px;
+    height: 445px;
+}
+#left-list, #right-list {
+    font-size: 15px;
+    margin-top: 10px;
+    margin-left: 15px;
+    text-align: left;
+    font-family: 'EB Garamond', serif;
+    margin-bottom: 10px;
+    text-decoration: underline;
+    color: black;
+}
+#book-container li {
+    margin-top: 10px;
+    height: 30px;
+    overflow: hidden;
+    user-select: none;
+}
+li:active {
+    color: black;
+}
+
+/* Recipe List styling */
+#ingredient-container{
+    width: 100%;
+}
+#bookleft_post{
+    display: inline-block;
+    flex: 1;
+    background-image: url("../images/bookleft.png");
+    background-size: 100% 100%;
+    min-width: 300px;
+    width: 400px;
+    max-width: 400px;
+    height: 500px;
+}
+#recipe-top{
+    margin-left: 32%;
+    margin-top: 5px;
+}
+#bookright_post{
+    flex: 1;
+    display: inline-block;
+    background-image: url("../images/bookright.png");
+    background-size: 100% 100%;
+    min-width: 300px;
+    width: 400px;
+    max-width: 400px;
+    height: 500px;
+}
+#feed_post{
+    flex: 1;
+    display: inline-block;
+    background-image: url("../images/nutri.png");
+    background-size: 100% 100%;
+    min-width: 300px;
+    max-width: 300px;
+    height: 500px;
+}
+#nutrition-container {
+    height: 455px;
+    margin-top: 45px;
+    padding-left: 5%;
+}
+#tweet-container {
+    height: 455px;
+    margin-top: 45px;
+}
+#recipe-name{
+    font-weight: 700;
+    margin-top: 6%;
+    margin-left: 10%;
+    height: 30px;
+    overflow: hidden;
+}
+#ingredients-title{
+    font-weight: 700;
+    margin-top: 6%;
+    margin-left: 10%;
+    height: 30px;
+    overflow: hidden;
+}
+#right-container-post{
+    padding-left: 6%;
+    margin-left: 4%;
+    margin-top: 2%;
+    width: 90%;
+    height: 410px;
+    overflow: auto;
+}
+#left-container-post{
+    padding-left: 6%;
+    margin-left: 4%;
+    margin-top: 2%;
+    width: 90%;
+    height: 380px;
+    overflow: auto;
+}
+
+#backrecipe {
+    border-bottom: 0px;
+    font-family: 'Tinos', serif;
+    font-weight: 700;
+    background-color: rgb(150, 150, 150);
+    color: rgb(255, 255, 255)
+}
+
+#backrecipe:hover {
+    border: 1px solid black;
+} 
+
+/* Ingredient List Item Stylings */
+.mainItem{
+    font-weight: 700;
+}
+
+.ingredient{
+    list-style-type: square;
+}
+
+/* Nutrition List Item Stylings */
+#nutrition-title{
+    font-size: 21px;
+    margin-bottom: 3%;
+}
+
+#nutrition-list{
+    list-style-position: inside;
 }

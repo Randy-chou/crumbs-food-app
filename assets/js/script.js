@@ -124,7 +124,7 @@ function getMoreInfo(event){
     }
 
     //If element is a list item, place its id value into the API url
-    newUrl="https://tasty.p.rapidapi.com/recipes/detail?id="+$(targetEl).val();
+    newUrl="https://tasty.p.rapidapi.com/recipes/detail?id="+ $(targetEl).val();
 
     //API call
     const settings = {
